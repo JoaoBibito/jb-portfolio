@@ -26,7 +26,7 @@ export default createGlobalStyle`
     }
  }
  body {
-    background-color: #fff;
+    background-color: #1B1B1B;
 }
 
 body a {
