@@ -1,17 +1,17 @@
 import React,{useEffect, useState}from 'react';
 import * as S from './style';
 
-function Card({img,title}){
+function Card(props){
 return(
-    <S.Card>
+    <S.Card >
         <S.CardImg>
-            <image src={img}/>
+            <img src={props.img}/>
         </S.CardImg>
         <S.CardTitle>
-            {title}
+            {props.title}
         </S.CardTitle>
     </S.Card>
-)
+    )
 }
 
 export default Card;

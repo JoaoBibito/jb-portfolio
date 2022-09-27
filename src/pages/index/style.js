@@ -114,7 +114,6 @@ padding-top:50px;
 export const divMySkills=styled.div`
 width: 90%;
 height: 500px;
-border: 1px solid red;
 margin:0 auto;
 display: flex;
 flex-wrap: wrap;
@@ -122,7 +121,6 @@ flex-wrap: wrap;
 
 export const MySkillsTitle=styled.h1`
 width:100% ;
-height: 100px;
 font-size: 4rem;
 text-align: center;
 padding-top: 30px;
@@ -133,16 +131,23 @@ export const divDescription=styled.div`
 height: 400px;
 width: 50%;
 border: 1px solid blue;
+padding-left: 100px;
+display: flex;
+flex-direction: column;
 `;
 
 export const descriptionTitle=styled.h2`
 width: 100px;
-margin-left: 100px;
+color: #666;
 padding-top:100px;
-font-size : 3rem;;
+font-size : 4rem;;
 `;
 
 export const descriptionText=styled.div`
+font-size: 2.5rem;
+margin-top: 30px;
+color: #666;
+width: 50%;
 `;
 
 export const divSkills=styled.div`
@@ -150,13 +155,42 @@ height: 400px;
 width: 49%;
 border: 1px solid yellow;
 display: flex;
-
+flex-wrap: wrap;
+padding:20px ;
 img{
     height: 100px;
     width:120px;
 }
 `;
+export const Card=styled.div`
+    width: 150px;
+    height: 150px;
+    background-color: #1E1E1E;
+    border: 1px solid #1F1F1F;
+    box-shadow: 2PX 2PX 8PX #000;
+    border-radius: 15px;
+    margin: 10px;
+    :hover{
+        transform: scale(1.1);
+        border: 1px solid #222;
+        box-shadow: 2PX 2PX 8PX #1D1D1D;
+    }
+`;
 
+export const CardImg=styled.div`
+height: 115px;
+width: 120px;
+margin-left:auto;
+margin-right: auto;
+margin-top: 5px;
+`;
+
+export const CardTitle=styled.h3`
+color: #4285f4;
+font-size: 1.5rem;
+display: flex;
+justify-content: center;
+`;
 export const MyProjects=styled.article`
 height:600px;
 

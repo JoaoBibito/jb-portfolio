@@ -1,11 +1,18 @@
-import React,{useEffect, useState}from 'react';
+import React,{useEffect, useState,useRef}from 'react';
 import Typcal from 'react-typical';
 import * as S from './style';
 import ScrollReveal from 'scrollreveal';
 import imgDev from '../../assets/DevIcon.svg';
 import { ProjectsCard } from '../../components/ProjectCard/style';
-import reactjsImg from '../../assets/reactjs.png';
 import CardSkill from '../../components/SkillsCard';
+
+import reactjsImg from '../../assets/reactjs.png';
+import htmlImg from '../../assets/html5.png';
+import css from '../../assets/css.png';
+import styledComponentsImg from '../../assets/styledComponentsImg.png';
+import JavaScriptImg from '../../assets/JavaScriptImg.png';
+import gitImg from '../../assets/gitImg.png';
+
 function Header(){
     const nameHeader = "< Joao Bibito />";
 
@@ -83,33 +90,63 @@ function AboutMe(){
     )}
 
 function MySkills(){
-    const skills=[{title:"HTML",description:"HTM é uma linguagem de marcação parar cntruir a estrutura de uma páginas web.", image:{reactjsImg}},
-                {title:"CSS", description:"CSS é uma linguagem de \"folha de estilo\" composta por \"camadas\" que serve para dar etilos a documentos web.",image:{reactjsImg}},
-                {title:"ReactJS",description:"ReactJS é uma biblioteca JavaScrit para a criação de interace de usuário(UI ou User Interface) para páginas web.",image:{reactjsImg}}]
-    const styledComponent={title:"",description:""}
+
+    const skills=[{title:"HTML",description:"HTM é uma linguagem de marcação parar construir a estrutura de uma páginas web.", image:htmlImg},
+                {title:"CSS", description:"CSS é uma linguagem de \"folha de estilo\" composta por \"camadas\" que serve para dar etilos a documentos web.",image:css},
+                {title:"ReactJS",description:"ReactJS é uma biblioteca JavaScrit para a criação de interace de usuário(UI ou User Interface) para páginas web.",image:reactjsImg},
+                {title:"Styled Components", description:"Styled Components é uma biblioteca que permite escrever código CSS dentro do JavaScript, assim aumentando nossa precisão e agilidade.", image:styledComponentsImg},
+                {title:"JavaScript",description:"O JavaScript é utilizado para controlar o HTML e o CSS, usado para manipular comportamentos na página",image:JavaScriptImg},
+                {title:"Git" ,description:"Sites responsivos são aqueles que se adaptam ao tamaho da tela que esta sendo exibida, como computador, celular, tablet e notebook, cada tela respondendo de forma diferente.",image:gitImg}]
+    
+    const [selectedSkill, setSelectedSkill]=useState('');
+    
+function changeDescription(item){
+        if(selectedSkill===''){
+            setSelectedSkill(item)
+        }
+        console.log(item)
+    }
+
+    function clearDescription(){
+        setSelectedSkill('')
+        console.log('item limpo')
+    }
+   
     return (
-        <S.MySkills>
-           
+        <S.MySkills>           
             <S.divMySkills>
             <S.MySkillsTitle>
                 Competências
             </S.MySkillsTitle>
                 <S.divDescription>
                     <S.descriptionTitle>
-                        {skills[0].title}
+                        {selectedSkill===''?'Passe o Mouse em uma Skill':
+                        selectedSkill.title}
                     </S.descriptionTitle>
                     <S.descriptionText>
-                        {skills[0].description}
                     </S.descriptionText>
                 </S.divDescription>
                 <S.divSkills>
-                {skills.map((key,skill)=>(
-                    <CardSkill title={skill.title} img={skill.image} key={key}/>
-                ))}
+                    {skills.map((item,key)=>{
+                      return(
+                      <S.Card 
+                      onMouseOver={() => changeDescription(item)} 
+                      onMouseOut={clearDescription}
+                      key={item.title}>
+                        <S.CardImg>
+                            <img src={item.image}/>
+                        </S.CardImg>
+                        <S.CardTitle>
+                            {item.title}
+                        </S.CardTitle>
+                    </S.Card>
+                    )} )
+                    }
+                    
                 </S.divSkills>
             </S.divMySkills>
         </S.MySkills>
-    )
+    ) 
 }
 function MyProjects(){
     return (
