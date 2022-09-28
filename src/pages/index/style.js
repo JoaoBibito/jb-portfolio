@@ -6,7 +6,7 @@ const moveImage=keyframes`
 from {transform:translateY(0px) };
 to{transform:translateY(20px)}
 `;
-
+//------------- HEADER PAGE
 export const Header =styled.header`
 display: flex;
 width: 100vw;
@@ -35,7 +35,7 @@ ul{
     color: #BBB;
 }
 `;
-
+//------------- HOME 
 export const Home=styled.article`
 height: 600px;
 width: 100vw;
@@ -76,6 +76,7 @@ img{
 export const SpanHome=styled.div`
 font-size:3rem;`;
 
+//------------- ABOUT ME
 export const AboutMe=styled.article`
 height: 600px;
 width: 100vw;
@@ -104,6 +105,7 @@ h1{
 }
 `;
 
+// ------------- MY SKILLS
 export const MySkills=styled.article`
 width: 100%;
 height:600px;
@@ -123,44 +125,40 @@ export const MySkillsTitle=styled.h1`
 width:100% ;
 font-size: 4rem;
 text-align: center;
-padding-top: 30px;
-    color:#DDD;
+color:#DDD;
+z-index: 10;
 `;
 
 export const divDescription=styled.div`
 height: 400px;
 width: 50%;
-border: 1px solid blue;
 padding-left: 100px;
 display: flex;
 flex-direction: column;
+z-index: 5;
 `;
 
 export const descriptionTitle=styled.h2`
-width: 100px;
+width: 500px;
 color: #666;
 padding-top:100px;
-font-size : 4rem;;
+font-size : 3.5rem;;
 `;
 
 export const descriptionText=styled.div`
+width: 600px;
 font-size: 2.5rem;
 margin-top: 30px;
 color: #666;
-width: 50%;
 `;
 
 export const divSkills=styled.div`
 height: 400px;
 width: 49%;
-border: 1px solid yellow;
 display: flex;
 flex-wrap: wrap;
 padding:20px ;
-img{
-    height: 100px;
-    width:120px;
-}
+z-index: 3;
 `;
 export const Card=styled.div`
     width: 150px;
@@ -169,23 +167,33 @@ export const Card=styled.div`
     border: 1px solid #1F1F1F;
     box-shadow: 2PX 2PX 8PX #000;
     border-radius: 15px;
+    transition: 0.5s ease;
     margin: 10px;
     :hover{
-        transform: scale(1.1);
-        border: 1px solid #222;
+        transform: scale(1.0);
+        border: 2px solid #222;
         box-shadow: 2PX 2PX 8PX #1D1D1D;
     }
 `;
 
 export const CardImg=styled.div`
-height: 115px;
-width: 120px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 110px;
+width: 150px;
 margin-left:auto;
 margin-right: auto;
 margin-top: 5px;
+img{
+    height: 95px;
+    width: 100px;
+}
 `;
 
 export const CardTitle=styled.h3`
+width: 150px;
+padding-top: 5px;
 color: #4285f4;
 font-size: 1.5rem;
 display: flex;
@@ -193,7 +201,6 @@ justify-content: center;
 `;
 export const MyProjects=styled.article`
 height:600px;
-
 background-color: #1E1E1E; ;
 `;
 

@@ -1,10 +1,8 @@
-import React,{useEffect, useState,useRef}from 'react';
+import React,{useEffect, useState,useRef, createRef}from 'react';
 import Typcal from 'react-typical';
 import * as S from './style';
 import ScrollReveal from 'scrollreveal';
 import imgDev from '../../assets/DevIcon.svg';
-import { ProjectsCard } from '../../components/ProjectCard/style';
-import CardSkill from '../../components/SkillsCard';
 
 import reactjsImg from '../../assets/reactjs.png';
 import htmlImg from '../../assets/html5.png';
@@ -91,54 +89,66 @@ function AboutMe(){
 
 function MySkills(){
 
+    useEffect(() => {
+        ScrollReveal({ reset: true })
+    
+        ScrollReveal({
+          distance: '200px',
+          duration: 2000,
+          origin: 'top',
+          reset: false
+        })    
+        ScrollReveal().reveal('.d-200', { duration: 1000,delay:200,distance:'50px'})
+        ScrollReveal().reveal('.d-300', { duration: 2000,delay:350})
+        ScrollReveal().reveal('.d-400', { duration: 4000,delay:500,distance:'100px'})
+
+    
+      }, [])
+
     const skills=[{title:"HTML",description:"HTM é uma linguagem de marcação parar construir a estrutura de uma páginas web.", image:htmlImg},
                 {title:"CSS", description:"CSS é uma linguagem de \"folha de estilo\" composta por \"camadas\" que serve para dar etilos a documentos web.",image:css},
                 {title:"ReactJS",description:"ReactJS é uma biblioteca JavaScrit para a criação de interace de usuário(UI ou User Interface) para páginas web.",image:reactjsImg},
                 {title:"Styled Components", description:"Styled Components é uma biblioteca que permite escrever código CSS dentro do JavaScript, assim aumentando nossa precisão e agilidade.", image:styledComponentsImg},
                 {title:"JavaScript",description:"O JavaScript é utilizado para controlar o HTML e o CSS, usado para manipular comportamentos na página",image:JavaScriptImg},
                 {title:"Git" ,description:"Sites responsivos são aqueles que se adaptam ao tamaho da tela que esta sendo exibida, como computador, celular, tablet e notebook, cada tela respondendo de forma diferente.",image:gitImg}]
-    
-    const [selectedSkill, setSelectedSkill]=useState('');
-    
-function changeDescription(item){
-        if(selectedSkill===''){
-            setSelectedSkill(item)
-        }
-        console.log(item)
-    }
+    const [selectedSkill, setSelectedSkill]= useState('');
+    console.log("renderzou");
 
+    function changeDescription(item){
+        setSelectedSkill({title:item.title,description:item.description})
+    }
     function clearDescription(){
         setSelectedSkill('')
-        console.log('item limpo')
     }
    
     return (
         <S.MySkills>           
             <S.divMySkills>
-            <S.MySkillsTitle>
+            <S.MySkillsTitle className='d-200'>
                 Competências
             </S.MySkillsTitle>
-                <S.divDescription>
-                    <S.descriptionTitle>
-                        {selectedSkill===''?'Passe o Mouse em uma Skill':
+                <S.divDescription className='d-300'>
+                    <S.descriptionTitle >
+                        {selectedSkill===''?'Passe o mouse em uma Skill':
                         selectedSkill.title}
                     </S.descriptionTitle>
                     <S.descriptionText>
+                        {selectedSkill===''?'':selectedSkill.description}
                     </S.descriptionText>
                 </S.divDescription>
-                <S.divSkills>
+                <S.divSkills className='d-400'>
                     {skills.map((item,key)=>{
                       return(
                       <S.Card 
-                      onMouseOver={() => changeDescription(item)} 
-                      onMouseOut={clearDescription}
-                      key={item.title}>
-                        <S.CardImg>
-                            <img src={item.image}/>
-                        </S.CardImg>
-                        <S.CardTitle>
-                            {item.title}
-                        </S.CardTitle>
+                        onMouseOver={() => changeDescription(item)} 
+                        onMouseOut={clearDescription}
+                        key={key}>
+                            <S.CardImg >
+                                <img src={item.image}/>
+                            </S.CardImg>
+                            <S.CardTitle  > 
+                                {item.title}
+                            </S.CardTitle>
                     </S.Card>
                     )} )
                     }
@@ -152,7 +162,6 @@ function MyProjects(){
     return (
         <S.MyProjects>
             <S.divMyProjects>
-                <ProjectsCard/>
             </S.divMyProjects>
         </S.MyProjects>
     )
