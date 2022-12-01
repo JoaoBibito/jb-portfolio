@@ -1,181 +1,290 @@
-import React,{useEffect, useState,useRef, createRef}from 'react';
-import Typcal from 'react-typical';
-import * as S from './style';
-import ScrollReveal from 'scrollreveal';
-import imgDev from '../../assets/DevIcon.svg';
+import React, {useEffect, useState} from "react";
+import Typcal from "react-typical";
+import * as S from "./style";
+import ScrollReveal from "scrollreveal";
+import {DownloadSimple, User} from "phosphor-react";
+import {HashLink as Link} from "react-router-hash-link";
+import reactjsImg from "../../assets/reactjs.png";
+import htmlImg from "../../assets/html5.png";
+import css from "../../assets/css.png";
+import styledComponentsImg from "../../assets/styledComponentsImg.png";
+import JavaScriptImg from "../../assets/JavaScriptImg.png";
+import gitImg from "../../assets/gitImg.png";
+import netflixImg from "../../assets/netflixProject.png";
 
-import reactjsImg from '../../assets/reactjs.png';
-import htmlImg from '../../assets/html5.png';
-import css from '../../assets/css.png';
-import styledComponentsImg from '../../assets/styledComponentsImg.png';
-import JavaScriptImg from '../../assets/JavaScriptImg.png';
-import gitImg from '../../assets/gitImg.png';
+function Header() {
+  const nameHeader = "< Joao Bibito />";
 
-function Header(){
-    const nameHeader = "< Joao Bibito />";
-
-return(
+  return (
     <S.Header>
-            <S.Name><a hrfe="/">{nameHeader}</a></S.Name>
-            <S.HeaderTopics>
-                <ul>
-                    <span>Sobre mim</span>
-                </ul>
-                <ul>
-                    <span>Conhecimentos</span>
-                </ul>
-                <ul>
-                    <span>Projetos</span>
-                </ul>
-                <ul>
-                    <span>Contato</span>
-                </ul>
-            </S.HeaderTopics>
+      <S.Name>
+        <a hrfe="/">{nameHeader}</a>
+      </S.Name>
+      <S.HeaderTopics>
+        <ul>
+          <span>
+            <Link to="#aboutMe">Sobre mim</Link>
+          </span>
+        </ul>
+        <ul>
+          <span>
+            <Link to="#mySkills">Conhecimentos</Link>
+          </span>
+        </ul>
+        <ul>
+          <span>
+            <Link to="#myProjects">Projetos</Link>
+          </span>
+        </ul>
+        <ul>
+          <span>Contato</span>
+        </ul>
+      </S.HeaderTopics>
     </S.Header>
-)
+  );
 }
 
-function Home (){
+function Home() {
+  useEffect(() => {
+    ScrollReveal({reset: true});
 
-    useEffect(() => {
-        ScrollReveal({ reset: true })
-    
-        ScrollReveal({
-          distance: '200px',
-          duration: 2000,
-          origin: 'top',
-          reset: false
-        })
-    
-    
-        ScrollReveal().reveal('.d-200', { duration: 1000,delay:150})
-        ScrollReveal().reveal('.d-300', { duration: 2000,delay:300})
-        ScrollReveal().reveal('.d-400', { duration: 3000,delay:450})
-    
-      }, [])
+    ScrollReveal({
+      distance: "200px",
+      duration: 2000,
+      origin: "top",
+      reset: false,
+    });
 
-    return(
-        <S.Home>
-            <S.divHome>
-                <S.TextHome>
-                    <S.SpanHome className='d-400'>Olá eu sou o</S.SpanHome>
-                    <div className='bigName d-300' ><span>J</span>oão <span>V</span>itor</div>
-                    <Typcal steps={[1000,"I'm, a developer in progress ",2000,"",2000]} loop={Infinity} className='d-200'/>
-                </S.TextHome>             
-                <S.ImgHome >
-                    <img src={imgDev}/>
-                </S.ImgHome>
-            </S.divHome>
-        </S.Home>
-    )
+    ScrollReveal().reveal(".d-200", {duration: 1000, delay: 150});
+    ScrollReveal().reveal(".d-300", {duration: 2000, delay: 300});
+    ScrollReveal().reveal(".d-400", {duration: 3000, delay: 450});
+  }, []);
+
+  return (
+    <S.Home>
+      <S.divHome>
+        <S.TextHome>
+          <S.SpanHome className="d-400">Olá eu sou o</S.SpanHome>
+          <div className="bigName d-300">
+            <span>J</span>oão <span>V</span>itor
+          </div>
+          <Typcal
+            steps={[
+              2000,
+              "I'm, a developer in progress. ",
+              2000,
+              "I'm Back-End developer.",
+              2000,
+              "I'm Front-End developer.",
+            ]}
+            loop={Infinity}
+            className="d-200"
+          />
+          <>
+            <S.buttonHome>entre em contato</S.buttonHome>
+            <S.buttonHome>Donwload CV</S.buttonHome>
+          </>
+        </S.TextHome>
+      </S.divHome>
+    </S.Home>
+  );
 }
 
-function AboutMe(){
-    
-    return(
-<S.AboutMe>
-    <S.divAboutMe>
-        <S.ImgHome/>
+function AboutMe() {
+  return (
+    <S.AboutMe id="aboutMe">
+      <S.divAboutMe>
         <S.textAboutMe>
-        <h1>
-            Quem sou eu
-        </h1>
-        Eu sou o João Vitor, tenho 21 anos de idade, entrei na área de TI em 2017 cursando Técnico em Informática, e atualmente sou 
-        formado em Analise e Desenvolvimentos de Sistemas. Hoje atuo como desenvolvedor C# e aprendendo HTML, CSS, JavaScript e ReactJS.
+          <S.Title>
+            Sobre
+            <span>
+              <User /> About
+            </span>
+          </S.Title>
+          Me chamo João Vitor, tenho 21 anos, ingressei no ramo acadêmico em
+          2017, estudando técnico de informática. Atualmente sou graduado em
+          Análise e Desenvolvimento de Sistemas, atuante no desenvolvimento C# e
+          aprendendo HTML, CSS, JavaScript e ReactJS.
         </S.textAboutMe>
-    </S.divAboutMe>
-</S.AboutMe>
-    )}
-
-function MySkills(){
-
-    useEffect(() => {
-        ScrollReveal({ reset: true })
-    
-        ScrollReveal({
-          distance: '200px',
-          duration: 2000,
-          origin: 'top',
-          reset: false
-        })    
-        ScrollReveal().reveal('.d-200', { duration: 1000,delay:200,distance:'50px'})
-        ScrollReveal().reveal('.d-300', { duration: 2000,delay:350})
-        ScrollReveal().reveal('.d-400', { duration: 4000,delay:500,distance:'100px'})
-
-    
-      }, [])
-
-    const skills=[{title:"HTML",description:"HTM é uma linguagem de marcação parar construir a estrutura de uma páginas web.", image:htmlImg},
-                {title:"CSS", description:"CSS é uma linguagem de \"folha de estilo\" composta por \"camadas\" que serve para dar etilos a documentos web.",image:css},
-                {title:"ReactJS",description:"ReactJS é uma biblioteca JavaScrit para a criação de interace de usuário(UI ou User Interface) para páginas web.",image:reactjsImg},
-                {title:"Styled Components", description:"Styled Components é uma biblioteca que permite escrever código CSS dentro do JavaScript, assim aumentando nossa precisão e agilidade.", image:styledComponentsImg},
-                {title:"JavaScript",description:"O JavaScript é utilizado para controlar o HTML e o CSS, usado para manipular comportamentos na página",image:JavaScriptImg},
-                {title:"Git" ,description:"Sites responsivos são aqueles que se adaptam ao tamaho da tela que esta sendo exibida, como computador, celular, tablet e notebook, cada tela respondendo de forma diferente.",image:gitImg}]
-    const [selectedSkill, setSelectedSkill]= useState('');
-    console.log("renderzou");
-
-    function changeDescription(item){
-        setSelectedSkill({title:item.title,description:item.description})
-    }
-    function clearDescription(){
-        setSelectedSkill('')
-    }
-   
-    return (
-        <S.MySkills>           
-            <S.divMySkills>
-            <S.MySkillsTitle className='d-200'>
-                Competências
-            </S.MySkillsTitle>
-                <S.divDescription className='d-300'>
-                    <S.descriptionTitle >
-                        {selectedSkill===''?'Passe o mouse em uma Skill':
-                        selectedSkill.title}
-                    </S.descriptionTitle>
-                    <S.descriptionText>
-                        {selectedSkill===''?'':selectedSkill.description}
-                    </S.descriptionText>
-                </S.divDescription>
-                <S.divSkills className='d-400'>
-                    {skills.map((item,key)=>{
-                      return(
-                      <S.Card 
-                        onMouseOver={() => changeDescription(item)} 
-                        onMouseOut={clearDescription}
-                        key={key}>
-                            <S.CardImg >
-                                <img src={item.image}/>
-                            </S.CardImg>
-                            <S.CardTitle  > 
-                                {item.title}
-                            </S.CardTitle>
-                    </S.Card>
-                    )} )
-                    }
-                    
-                </S.divSkills>
-            </S.divMySkills>
-        </S.MySkills>
-    ) 
-}
-function MyProjects(){
-    return (
-        <S.MyProjects>
-            <S.divMyProjects>
-            </S.divMyProjects>
-        </S.MyProjects>
-    )
+      </S.divAboutMe>
+    </S.AboutMe>
+  );
 }
 
-export default()=>{
-    
-    return(
-        <div>
-            <Header/>
-            <Home/>
-            <AboutMe/>
-            <MySkills/>
-            <MyProjects/>
-        </div>
-    )
+function MySkills() {
+  useEffect(() => {
+    ScrollReveal({reset: true});
+
+    ScrollReveal({
+      distance: "200px",
+      duration: 2000,
+      origin: "top",
+      reset: false,
+    });
+    ScrollReveal().reveal(".d-200", {
+      duration: 1000,
+      delay: 200,
+      distance: "50px",
+    });
+    ScrollReveal().reveal(".d-300", {duration: 2000, delay: 350});
+    ScrollReveal().reveal(".d-400", {
+      duration: 4000,
+      delay: 500,
+      distance: "100px",
+    });
+  }, []);
+
+  const skills = [
+    {
+      title: "HTML",
+      description:
+        "HTM é uma linguagem de marcação parar construir a estrutura de uma páginas web.",
+      image: htmlImg,
+    },
+    {
+      title: "CSS",
+      description:
+        'CSS é uma linguagem de "folha de estilo" composta por "camadas" que serve para dar etilos a documentos web.',
+      image: css,
+    },
+    {
+      title: "ReactJS",
+      description:
+        "ReactJS é uma biblioteca JavaScrit para a criação de interace de usuário(UI ou User Interface) para páginas web.",
+      image: reactjsImg,
+    },
+    {
+      title: "Styled Components",
+      description:
+        "Styled Components é uma biblioteca que permite escrever código CSS dentro do JavaScript, assim aumentando nossa precisão e agilidade.",
+      image: styledComponentsImg,
+    },
+    {
+      title: "JavaScript",
+      description:
+        "O JavaScript é utilizado para controlar o HTML e o CSS, usado para manipular comportamentos na página",
+      image: JavaScriptImg,
+    },
+    {
+      title: "Git",
+      description:
+        "Sites responsivos são aqueles que se adaptam ao tamaho da tela que esta sendo exibida, como computador, celular, tablet e notebook, cada tela respondendo de forma diferente.",
+      image: gitImg,
+    },
+  ];
+  const [selectedSkill, setSelectedSkill] = useState("");
+  console.log("renderzou");
+
+  function changeDescription(item) {
+    setSelectedSkill({title: item.title, description: item.description});
+  }
+  function clearDescription() {
+    setSelectedSkill("");
+  }
+
+  return (
+    <S.MySkills id="mySkills">
+      <S.divMySkills>
+        <S.MySkillsTitle className="d-200">Competências</S.MySkillsTitle>
+        <S.divDescription className="d-300">
+          <S.descriptionTitle>
+            {selectedSkill === ""
+              ? "Passe o mouse em uma Skill"
+              : selectedSkill.title}
+          </S.descriptionTitle>
+          <S.descriptionText>
+            {selectedSkill === "" ? "" : selectedSkill.description}
+          </S.descriptionText>
+        </S.divDescription>
+        <S.divSkills className="d-400">
+          {skills.map((item, key) => {
+            return (
+              <S.Card
+                onMouseOver={() => changeDescription(item)}
+                onMouseOut={clearDescription}
+                key={key}
+              >
+                <S.CardImg>
+                  <img src={item.image} />
+                </S.CardImg>
+                <S.CardTitle>{item.title}</S.CardTitle>
+              </S.Card>
+            );
+          })}
+        </S.divSkills>
+      </S.divMySkills>
+    </S.MySkills>
+  );
 }
+function MyProjects() {
+  return (
+    <S.MyProjects id="myProjects">
+      <S.divMyProjects>
+        <S.MyProjectsTitle>Meus projetos</S.MyProjectsTitle>
+        <S.CardProject>
+          <S.MyProjectImg>
+            <img src={netflixImg} />
+          </S.MyProjectImg>
+          <S.MyProjectTitle>Netflix Clone</S.MyProjectTitle>
+          <S.descriptionProject>
+            Projeto que visualmente espelha as paginas do Netflix, onde exibe
+            listas de filmes e séries separados por gêneros, consumidos de uma
+            API.
+          </S.descriptionProject>
+          <button>
+            <a
+              href="https://github.com/JoaoBibito/NetflixClone"
+              target="_blank"
+            >
+              Repositório
+            </a>
+          </button>
+          <button>
+            <a
+              href="https://joaobibito.github.io/NetflixClone/"
+              target="_blank"
+            >
+              Ver página
+            </a>
+          </button>
+        </S.CardProject>
+      </S.divMyProjects>
+    </S.MyProjects>
+  );
+}
+
+function Contact() {
+  return (
+    <S.Contact>
+      <S.divContact>
+        <S.ContactTitle>Contato</S.ContactTitle>
+        <S.FormContact>
+          <S.formInput placeholder="Seu nome" />
+          <S.formInput placeholder="Seu e-mail" />
+          <S.formInput
+            placeholder="Deixe sua mensagem"
+            style={{
+              height: "110px",
+              display: "flex",
+              justifyContent: "start",
+              alignContent: "start",
+            }}
+          />
+        </S.FormContact>
+      </S.divContact>
+    </S.Contact>
+  );
+}
+
+export default () => {
+  return (
+    <div>
+      <Header />
+      <Home />
+      <AboutMe />
+      <MySkills />
+      <MyProjects />
+      <Contact />
+    </div>
+  );
+};
