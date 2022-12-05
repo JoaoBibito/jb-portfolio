@@ -54,7 +54,7 @@ export const Header = styled.header`
   display: flex;
   width: 100%;
   height: 75px;
-  background-color: #1b1b1b;
+  background-color: #151519;
   padding: 0px 75px;
   align-items: center;
   box-shadow: 0px 1px 5px #252525;
@@ -92,6 +92,7 @@ export const HeaderTopics = styled.ul`
 //------------- HOME
 export const Home = styled.article`
   height: 800px;
+  text-decoration: none;
   width: 100%;
   padding: 80px 120px;
   box-shadow: 0px 1px 5px #252525;
@@ -145,12 +146,11 @@ export const buttonHome = styled.button`
   font-size: 3rem;
   cursor: pointer;
   background-color: #151519;
-  padding: 10px;
   border-image: linear-gradient(225deg, #00d9ff 0%, #1f1670 100%) 1;
   margin-right: 50px;
   :hover {
     border-image: linear-gradient(225deg, #1f1670 0%, #00d9ff 100%) 1;
-    transition: all 500ms ease-in-out;
+    /* transition: all 500ms ease-in-out; */
     transform: scale(1.02);
   }
 `;
@@ -159,7 +159,7 @@ export const buttonHome = styled.button`
 export const AboutMe = styled.article`
   height: 800px;
   padding: 80px 120px;
-  background-color: #1e1e1e;
+  background-color: #151519;
   box-shadow: 0px 1px 8px #2f2f2f;
 `;
 
@@ -185,9 +185,9 @@ export const textAboutMe = styled.div`
 // ------------- MY SKILLS
 export const MySkills = styled.article`
   width: 100%;
-  height: 600px;
+  height: 800px;
   display: flex;
-  padding-top: 50px;
+  padding: 80px 120px; ;
 `;
 
 export const divMySkills = styled.div`
@@ -279,11 +279,11 @@ export const CardTitle = styled.h3`
 
 //------------- My Projects
 export const MyProjects = styled.article`
-  height: 600px;
+  height: 800px;
   width: 100%;
   padding: 80px 120px;
   box-shadow: 0px 1px 5px #252525;
-  background-color: #1e1e1e;
+  background-color: #151519;
   box-shadow: 0px 1px 8px #2f2f2f;
 `;
 
@@ -354,7 +354,6 @@ export const MyProjectImg = styled.div`
 
 export const MyProjectTitle = styled.h1`
   width: 100%;
-  padding-top: 15px;
   text-align: center;
   color: #ddd;
 `;
@@ -369,17 +368,28 @@ export const descriptionProject = styled.div`
 
 export const Contact = styled.article`
   width: 100%;
-  height: 600px;
+  height: 800px;
   display: flex;
-  padding-top: 50px;
+  padding: 80px 120px;
 `;
 
-export const divContact = styled.div`
-  width: 90%;
-  height: 460px;
+export const divContact = styled.form`
+  position: relative;
+  background: #151519;
+  width: 45%;
+  border-radius: 30px;
+  height: 600px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid red;
+  ::before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(225deg, #00d9ff 0%, #1f1670 100%);
+    margin: -2px;
+    border-radius: 30px;
+  }
 `;
 
 export const ContactTitle = styled.h1`
@@ -389,27 +399,25 @@ export const ContactTitle = styled.h1`
   color: #ddd;
 `;
 
-export const FormContact = styled.form`
-  border: 1px blue solid;
-  height: 350px;
-  width: 450px;
+export const FormContact = styled.div`
+  height: 450px;
+  width: 500px;
+  padding-left: 50px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
 `;
 
 export const formInput = styled.input`
-  height: 20px;
-  width: 300px;
-  margin-left: 100px;
-  margin-right: auto;
+  height: 35px;
+  width: 400px;
   margin-top: 20px;
-  background-color: #777;
+  background-color: #333;
   border-radius: 5px;
   padding: 10px;
   font-size: 1.5rem;
   border: 1px solid #aaa;
   ::placeholder {
-    color: #111;
+    color: lightgray;
   }
 `;

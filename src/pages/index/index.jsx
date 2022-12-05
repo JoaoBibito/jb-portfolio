@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import Typcal from "react-typical";
 import * as S from "./style";
 import ScrollReveal from "scrollreveal";
-import {DownloadSimple, User} from "phosphor-react";
+import {DownloadSimple, User, Briefcase, FileCode, Phone} from "phosphor-react";
 import {HashLink as Link} from "react-router-hash-link";
 import reactjsImg from "../../assets/reactjs.png";
 import htmlImg from "../../assets/html5.png";
@@ -17,9 +17,7 @@ function Header() {
 
   return (
     <S.Header>
-      <S.Name>
-        <a hrfe="/">{nameHeader}</a>
-      </S.Name>
+      <S.Name>{nameHeader} </S.Name>
       <S.HeaderTopics>
         <ul>
           <span>
@@ -61,7 +59,7 @@ function Home() {
   }, []);
 
   return (
-    <S.Home>
+    <S.Home id="home">
       <S.divHome>
         <S.TextHome>
           <S.SpanHome className="d-400">Olá eu sou o</S.SpanHome>
@@ -81,7 +79,7 @@ function Home() {
             className="d-200"
           />
           <>
-            <S.buttonHome>entre em contato</S.buttonHome>
+            <S.buttonHome>Contato</S.buttonHome>
             <S.buttonHome>Donwload CV</S.buttonHome>
           </>
         </S.TextHome>
@@ -185,7 +183,14 @@ function MySkills() {
   return (
     <S.MySkills id="mySkills">
       <S.divMySkills>
-        <S.MySkillsTitle className="d-200">Competências</S.MySkillsTitle>
+        <S.MySkillsTitle className="d-200">
+          <S.Title>
+            Habilidades
+            <span>
+              <FileCode /> Skills
+            </span>
+          </S.Title>
+        </S.MySkillsTitle>
         <S.divDescription className="d-300">
           <S.descriptionTitle>
             {selectedSkill === ""
@@ -220,7 +225,14 @@ function MyProjects() {
   return (
     <S.MyProjects id="myProjects">
       <S.divMyProjects>
-        <S.MyProjectsTitle>Meus projetos</S.MyProjectsTitle>
+        <S.MyProjectsTitle>
+          <S.Title>
+            Projetos
+            <span>
+              <Briefcase /> Projects
+            </span>
+          </S.Title>
+        </S.MyProjectsTitle>
         <S.CardProject>
           <S.MyProjectImg>
             <img src={netflixImg} />
@@ -257,7 +269,14 @@ function Contact() {
   return (
     <S.Contact>
       <S.divContact>
-        <S.ContactTitle>Contato</S.ContactTitle>
+        <S.ContactTitle>
+          <S.Title>
+            Contato
+            <span>
+              <Phone /> Contact
+            </span>
+          </S.Title>
+        </S.ContactTitle>
         <S.FormContact>
           <S.formInput placeholder="Seu nome" />
           <S.formInput placeholder="Seu e-mail" />
@@ -270,6 +289,22 @@ function Contact() {
               alignContent: "start",
             }}
           />
+          <S.buttonHome
+            style={{
+              height: "40px",
+              fontSize: "1.5rem",
+            }}
+          >
+            Limpar
+          </S.buttonHome>
+          <S.buttonHome
+            style={{
+              height: "40px",
+              fontSize: "1.5rem",
+            }}
+          >
+            Enviar
+          </S.buttonHome>
         </S.FormContact>
       </S.divContact>
     </S.Contact>

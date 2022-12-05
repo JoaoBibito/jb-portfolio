@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components';
+import {createGlobalStyle} from "styled-components";
 
 export default createGlobalStyle`
 *{
@@ -26,7 +26,7 @@ export default createGlobalStyle`
     }
  }
  body {
-    background-color: #171717;
+    background-color: #121216;
 }
 
 body a {
