@@ -11,6 +11,7 @@ import styledComponentsImg from "../../assets/styledComponentsImg.png";
 import JavaScriptImg from "../../assets/JavaScriptImg.png";
 import gitImg from "../../assets/gitImg.png";
 import netflixImg from "../../assets/netflixProject.png";
+import Particle from "../../Components/Particle";
 
 function Header() {
   const nameHeader = "< Joao Bibito />";
@@ -315,6 +316,7 @@ export default () => {
   return (
     <div>
       <Header />
+      <Particle />
       <Home />
       <AboutMe />
       <MySkills />

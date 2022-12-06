@@ -47,6 +47,12 @@ export const Title = styled.h2`
   }
 `;
 
+export const Container = styled.div`
+  width: 100%;
+  height: 1000px;
+  position: fixed;
+  z-index: -1;
+`;
 //------------- HEADER PAGE
 export const Header = styled.header`
   position: fixed;
@@ -106,9 +112,14 @@ export const divHome = styled.article`
 `;
 
 export const TextHome = styled.div`
+  position: relative;
+  backdrop-filter: blur(2.5px);
+  border: 1px lightgray solid;
+  border-radius: 15px;
   font-size: 3rem;
-  padding-left: 300px;
-  width: 100%;
+  padding: 50px;
+  margin-left: 20%;
+  width: 40%;
   color: white;
   .bigName {
     margin-top: 10px;
@@ -143,7 +154,7 @@ export const buttonHome = styled.button`
   height: 70px;
   padding-left: 20px;
   padding-right: 20px;
-  font-size: 3rem;
+  font-size: 2.5rem;
   cursor: pointer;
   background-color: #151519;
   border-image: linear-gradient(225deg, #00d9ff 0%, #1f1670 100%) 1;
