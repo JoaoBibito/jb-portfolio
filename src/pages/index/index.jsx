@@ -2,8 +2,10 @@ import React, {useEffect, useState} from "react";
 import Typcal from "react-typical";
 import * as S from "./style";
 import ScrollReveal from "scrollreveal";
-import {DownloadSimple, User, Briefcase, FileCode, Phone} from "phosphor-react";
+import {BsLinkedin, BsGithub, BsInstagram} from "react-icons/bs";
+import {MdOutlineMail} from "react-icons/md";
 import {HashLink as Link} from "react-router-hash-link";
+import {DownloadSimple, User, Briefcase, FileCode, Phone} from "phosphor-react";
 import reactjsImg from "../../assets/reactjs.png";
 import htmlImg from "../../assets/html5.png";
 import css from "../../assets/css.png";
@@ -12,6 +14,8 @@ import JavaScriptImg from "../../assets/JavaScriptImg.png";
 import gitImg from "../../assets/gitImg.png";
 import netflixImg from "../../assets/netflixProject.png";
 import Particle from "../../Components/Particle";
+import imgProfile from "../../assets/PicProfile.jpg";
+import emailjs from "@emailjs/browser"
 
 function Header() {
   const nameHeader = "< Joao Bibito />";
@@ -36,7 +40,9 @@ function Header() {
           </span>
         </ul>
         <ul>
-          <span>Contato</span>
+          <span>
+            <Link to="#contact">Contato</Link>
+          </span>
         </ul>
       </S.HeaderTopics>
     </S.Header>
@@ -80,8 +86,14 @@ function Home() {
             className="d-200"
           />
           <>
-            <S.buttonHome>Contato</S.buttonHome>
-            <S.buttonHome>Donwload CV</S.buttonHome>
+            <S.buttonHome>
+              <a href="#contact">Contato</a>
+            </S.buttonHome>
+            <S.buttonHome>
+              <a href={require("../../assets/CurriculoJoaoVitor.pdf")} download>
+                Curriculo <DownloadSimple />
+              </a>
+            </S.buttonHome>
           </>
         </S.TextHome>
       </S.divHome>
@@ -93,19 +105,30 @@ function AboutMe() {
   return (
     <S.AboutMe id="aboutMe">
       <S.divAboutMe>
-        <S.textAboutMe>
-          <S.Title>
-            Sobre
-            <span>
-              <User /> About
-            </span>
-          </S.Title>
-          Me chamo João Vitor, tenho 21 anos, ingressei no ramo acadêmico em
-          2017, estudando técnico de informática. Atualmente sou graduado em
-          Análise e Desenvolvimento de Sistemas, atuante no desenvolvimento C# e
-          aprendendo HTML, CSS, JavaScript e ReactJS.
-        </S.textAboutMe>
-      </S.divAboutMe>
+        <S.Title>
+          Sobre
+          <span>
+            <User /> About
+          </span>
+        </S.Title>
+        </S.divAboutMe>
+        <S.containerAboutMe>
+          <img
+            src={imgProfile}
+            style={{
+              width: "300px",
+              height: "400px",
+              marginRight: "20px",
+            }}
+            alt="Profile"
+          />
+          <S.textAboutMe>
+            Me chamo João Vitor, tenho 21 anos, ingressei no ramo acadêmico em
+            2017, estudando técnico de informática. Atualmente sou graduado em
+            Análise e Desenvolvimento de Sistemas, atuante no desenvolvimento C#
+            e aprendendo HTML, CSS, JavaScript e ReactJS.
+          </S.textAboutMe>
+          </S.containerAboutMe>
     </S.AboutMe>
   );
 }
@@ -172,7 +195,6 @@ function MySkills() {
     },
   ];
   const [selectedSkill, setSelectedSkill] = useState("");
-  console.log("renderzou");
 
   function changeDescription(item) {
     setSelectedSkill({title: item.title, description: item.description});
@@ -211,7 +233,7 @@ function MySkills() {
                 key={key}
               >
                 <S.CardImg>
-                  <img src={item.image} />
+                  <img src={item.image} alt="Skill"/>
                 </S.CardImg>
                 <S.CardTitle>{item.title}</S.CardTitle>
               </S.Card>
@@ -236,7 +258,7 @@ function MyProjects() {
         </S.MyProjectsTitle>
         <S.CardProject>
           <S.MyProjectImg>
-            <img src={netflixImg} />
+            <img src={netflixImg} alt='Netflix project'/>
           </S.MyProjectImg>
           <S.MyProjectTitle>Netflix Clone</S.MyProjectTitle>
           <S.descriptionProject>
@@ -247,7 +269,7 @@ function MyProjects() {
           <button>
             <a
               href="https://github.com/JoaoBibito/NetflixClone"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               Repositório
             </a>
@@ -255,7 +277,7 @@ function MyProjects() {
           <button>
             <a
               href="https://joaobibito.github.io/NetflixClone/"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               Ver página
             </a>
@@ -267,9 +289,29 @@ function MyProjects() {
 }
 
 function Contact() {
+  const [name,setName]=useState('')
+  const [email,setEmail]=useState('')
+  const [message,setMessage]=useState('')
+
+  function sendEmail(e){
+    e.preventDefault()
+    const templateParams={
+      from_name: name,
+      message:message,
+      email:email
+    }
+    emailjs.send("service_salu4oj","template_t65oiet",templateParams,"RL3f1WSBpqa117VED")
+    .then((response)=>{
+      setName("")
+      setEmail("")
+      setMessage("")
+    },(error)=>{
+      console.log("Error",error)
+    })
+  }
   return (
-    <S.Contact>
-      <S.divContact>
+    <S.Contact id="contact">
+      <S.formContact onSubmit={sendEmail}>
         <S.ContactTitle>
           <S.Title>
             Contato
@@ -278,17 +320,27 @@ function Contact() {
             </span>
           </S.Title>
         </S.ContactTitle>
-        <S.FormContact>
-          <S.formInput placeholder="Seu nome" />
-          <S.formInput placeholder="Seu e-mail" />
+        <S.divContact>
+          <S.formInput 
+            placeholder="Seu nome"
+            value={name}
+            required
+            onChange={(e)=>setName(e.target.value)} />
+          <S.formInput 
+            placeholder="Seu e-mail" 
+            value={email}
+            required
+            onChange={(e)=> setEmail(e.target.value)} />
           <S.formInput
             placeholder="Deixe sua mensagem"
+            value={message}
             style={{
               height: "110px",
               display: "flex",
               justifyContent: "start",
               alignContent: "start",
             }}
+            onChange={(e)=>setMessage(e.target.value)}
           />
           <S.buttonHome
             style={{
@@ -306,15 +358,65 @@ function Contact() {
           >
             Enviar
           </S.buttonHome>
-        </S.FormContact>
-      </S.divContact>
+        </S.divContact>
+      </S.formContact>
     </S.Contact>
   );
 }
 
-export default () => {
+function Footer() {
   return (
-    <div>
+    <S.Footer>
+      <div
+        style={{
+          fontSize: "1.5rem",
+          fontWeight: "bold",
+          justifySelf: "left",
+          position: "absolute",
+          left: "100px",
+        }}
+      >
+        © João Vitor Barbosa 2022
+      </div>
+      <ul>
+        <li>
+          <Link
+            to="#contact"
+            style={{
+              hover: {Color: "blue"},
+            }}
+          >
+            Email <MdOutlineMail size={25} style={{marginLeft: "8px"}} />
+          </Link>
+        </li>
+        <li>
+          <a href="https://github.com/JoaoBibito" target="_blank" rel="noreferrer">
+            Github <BsGithub size={25} style={{marginLeft: "8px"}} />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/joao-vitor-05aa38141/"
+            target="_blank" rel="noreferrer"
+          >
+            Linkedin <BsLinkedin size={25} style={{marginLeft: "8px"}} />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/joao.bibito/" target="_blank" rel="noreferrer" >
+            Instagram <BsInstagram size={25} style={{marginLeft: "8px"}} />
+          </a>
+        </li>
+      </ul>
+    </S.Footer>
+  );
+}
+export function Index (){
+  return (
+    <div style={{
+      width: "100%",
+      position:"relative"
+    }}>
       <Header />
       <Particle />
       <Home />
@@ -322,6 +424,7 @@ export default () => {
       <MySkills />
       <MyProjects />
       <Contact />
+      <Footer />
     </div>
   );
 };

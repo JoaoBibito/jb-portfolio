@@ -1,13 +1,13 @@
 import React from 'react';
 import {HashRouter,Route,Routes} from 'react-router-dom';
-import Inicio from '../src/pages/index';
+import {Index} from '../src/pages/index/index';
 
 function AppRoutes(){
 
     return(
         <HashRouter>
             <Routes>
-                <Route path='/' exact element={<Inicio/>}/>
+                <Route path='/' exact element={<Index/>}/>
             </Routes>
         </HashRouter>
     )

@@ -15,7 +15,8 @@ export const Title = styled.h2`
   color: var(--first-color);
   z-index: 1;
   opacity: 1;
-
+  margin-left:auto;
+  margin-right: auto;
   @media (min-width: 994px) {
     font-size: 3.5rem;
   }
@@ -48,7 +49,7 @@ export const Title = styled.h2`
 `;
 
 export const Container = styled.div`
-  width: 100%;
+  
   height: 1000px;
   position: fixed;
   z-index: -1;
@@ -71,6 +72,9 @@ export const Name = styled.h1`
   margin-left: 100px;
   font-size: 3.5rem;
   cursor: pointer;
+  @media(max-width:1675px) {
+    margin-left: 30px;
+  }
 `;
 
 export const HeaderTopics = styled.ul`
@@ -97,7 +101,7 @@ export const HeaderTopics = styled.ul`
 `;
 //------------- HOME
 export const Home = styled.article`
-  height: 800px;
+  height: 700px;
   text-decoration: none;
   width: 100%;
   padding: 80px 120px;
@@ -114,12 +118,12 @@ export const divHome = styled.article`
 export const TextHome = styled.div`
   position: relative;
   backdrop-filter: blur(2.5px);
-  border: 1px lightgray solid;
+  border: 2px lightgray solid;
   border-radius: 15px;
   font-size: 3rem;
   padding: 50px;
   margin-left: 20%;
-  width: 40%;
+  width: 650px;
   color: white;
   .bigName {
     margin-top: 10px;
@@ -135,6 +139,9 @@ export const TextHome = styled.div`
     font-size: 9rem;
     font-weight: bold;
   }
+  @media(max-width:1675px) {
+    margin-left: 50px;
+    }
 `;
 
 export const ImgHome = styled.div`
@@ -154,7 +161,8 @@ export const buttonHome = styled.button`
   height: 70px;
   padding-left: 20px;
   padding-right: 20px;
-  font-size: 2.5rem;
+  text-decoration: none;
+  font-size: 2rem;
   cursor: pointer;
   background-color: #151519;
   border-image: linear-gradient(225deg, #00d9ff 0%, #1f1670 100%) 1;
@@ -164,18 +172,35 @@ export const buttonHome = styled.button`
     /* transition: all 500ms ease-in-out; */
     transform: scale(1.02);
   }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
 
 //------------- ABOUT ME
 export const AboutMe = styled.article`
-  height: 800px;
+  height: 700px;
+  position: relative;
+  width: 100%;
   padding: 80px 120px;
   background-color: #151519;
   box-shadow: 0px 1px 8px #2f2f2f;
 `;
 
+export const containerAboutMe=styled.div`
+display: flex;
+    width: 50%;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width: 1675px) {
+    width: 80%;
+  }
+    `
 export const divAboutMe = styled.article`
-  display: inline-flex;
+  display:flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -183,20 +208,18 @@ export const divAboutMe = styled.article`
 
 export const textAboutMe = styled.div`
   color: #666;
-  font-size: 3rem;
-  padding-top: 2rem;
+  font-size: 32px;
+  text-align: justify;
   display: inline-flex;
   -webkit-box-pack: center;
-  justify-content: center;
   -webkit-box-align: center;
-  align-items: center;
   flex-direction: column;
 `;
 
 // ------------- MY SKILLS
 export const MySkills = styled.article`
   width: 100%;
-  height: 800px;
+  height: 700px;
   display: flex;
   padding: 80px 120px; ;
 `;
@@ -220,21 +243,25 @@ export const MySkillsTitle = styled.h1`
 export const divDescription = styled.div`
   height: 400px;
   width: 50%;
+  backdrop-filter: blur(2.5px);
   padding-left: 100px;
   display: flex;
   flex-direction: column;
   z-index: 5;
+  @media (max-width: 1675px) {
+    
+  }
 `;
 
 export const descriptionTitle = styled.h2`
-  width: 500px;
+  width: 100%;
   color: #666;
   padding-top: 100px;
   font-size: 3.5rem; ;
 `;
 
 export const descriptionText = styled.div`
-  width: 600px;
+  width: 100%;
   font-size: 2.5rem;
   margin-top: 30px;
   color: #666;
@@ -242,7 +269,7 @@ export const descriptionText = styled.div`
 
 export const divSkills = styled.div`
   height: 400px;
-  width: 49%;
+  width: 50%;
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
@@ -290,7 +317,7 @@ export const CardTitle = styled.h3`
 
 //------------- My Projects
 export const MyProjects = styled.article`
-  height: 800px;
+  height: 700px;
   width: 100%;
   padding: 80px 120px;
   box-shadow: 0px 1px 5px #252525;
@@ -379,17 +406,17 @@ export const descriptionProject = styled.div`
 
 export const Contact = styled.article`
   width: 100%;
-  height: 800px;
+  height: 700px;
   display: flex;
   padding: 80px 120px;
 `;
 
-export const divContact = styled.form`
+export const formContact = styled.form`
   position: relative;
   background: #151519;
-  width: 45%;
+  width: 35%;
   border-radius: 30px;
-  height: 600px;
+  height: 500px;
   margin-left: auto;
   margin-right: auto;
   ::before {
@@ -410,7 +437,7 @@ export const ContactTitle = styled.h1`
   color: #ddd;
 `;
 
-export const FormContact = styled.div`
+export const divContact = styled.div`
   height: 450px;
   width: 500px;
   padding-left: 50px;
@@ -427,8 +454,37 @@ export const formInput = styled.input`
   border-radius: 5px;
   padding: 10px;
   font-size: 1.5rem;
-  border: 1px solid #aaa;
+  border: 1px solid #555;
   ::placeholder {
     color: lightgray;
+  }
+`;
+export const Footer = styled.article`
+  width: 100%;
+  height: 75px;
+  display: inline-flex;
+  background-color: #151519;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 1px 5px #252525;
+  padding: 10px 100px;
+  ul {
+    width: 40%;
+    font-size: 1.9rem;
+    display: flex;
+    color: #ccc;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+    justify-content: space-evenly;
+  }
+  li:hover {
+    transform: scale(1.1);
+  }
+  li > a {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    align-items: center;
   }
 `;

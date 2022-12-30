@@ -12,7 +12,9 @@ export default createGlobalStyle`
  html{
     scroll-behavior: smooth;
     font-size: 65%;
-
+    @media(max-width:1675px) {
+        font-size: 60%;
+    }
     @media(max-width:950px) {
         font-size: 60%;
     }
