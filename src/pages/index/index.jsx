@@ -105,7 +105,7 @@ function AboutMe() {
   return (
     <S.AboutMe id="aboutMe">
       <S.divAboutMe>
-        <S.Title>
+        <S.Title className="d-200">
           Sobre
           <span>
             <User /> About
@@ -119,6 +119,7 @@ function AboutMe() {
               width: "300px",
               height: "400px",
               marginRight: "20px",
+              borderRadius:"15px"
             }}
             alt="Profile"
           />
@@ -373,7 +374,8 @@ function Footer() {
           fontWeight: "bold",
           justifySelf: "left",
           position: "absolute",
-          left: "100px",
+          left: "60px",
+          color:"white"
         }}
       >
         © João Vitor Barbosa 2022

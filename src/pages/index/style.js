@@ -12,7 +12,7 @@ export const Title = styled.h2`
   font-weight: 800;
   margin: 2rem 0px;
   padding-top: 2.1rem;
-  color: var(--first-color);
+  color: white;
   z-index: 1;
   opacity: 1;
   margin-left:auto;
@@ -62,7 +62,7 @@ export const Header = styled.header`
   width: 100%;
   height: 75px;
   background-color: #151519;
-  padding: 0px 75px;
+  padding: 0px 50px;
   align-items: center;
   box-shadow: 0px 1px 5px #252525;
 `;
@@ -163,6 +163,7 @@ export const buttonHome = styled.button`
   padding-right: 20px;
   text-decoration: none;
   font-size: 2rem;
+  color:white;
   cursor: pointer;
   background-color: #151519;
   border-image: linear-gradient(225deg, #00d9ff 0%, #1f1670 100%) 1;
@@ -190,13 +191,13 @@ export const AboutMe = styled.article`
 
 export const containerAboutMe=styled.div`
 display: flex;
-    width: 50%;
+    width: 900px;
     justify-content: space-between;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     @media (max-width: 1675px) {
-    width: 80%;
+    
   }
     `
 export const divAboutMe = styled.article`
@@ -208,7 +209,8 @@ export const divAboutMe = styled.article`
 
 export const textAboutMe = styled.div`
   color: #666;
-  font-size: 32px;
+  font-size: 29px;
+  padding:5px;
   text-align: justify;
   display: inline-flex;
   -webkit-box-pack: center;
@@ -225,7 +227,7 @@ export const MySkills = styled.article`
 `;
 
 export const divMySkills = styled.div`
-  width: 90%;
+  width: 960px;
   height: 500px;
   margin: 0 auto;
   display: flex;
@@ -242,9 +244,8 @@ export const MySkillsTitle = styled.h1`
 
 export const divDescription = styled.div`
   height: 400px;
-  width: 50%;
+  width: 400px;
   backdrop-filter: blur(2.5px);
-  padding-left: 100px;
   display: flex;
   flex-direction: column;
   z-index: 5;
@@ -268,16 +269,16 @@ export const descriptionText = styled.div`
 `;
 
 export const divSkills = styled.div`
-  height: 400px;
-  width: 50%;
+  height: 330px;
+  width: 500px;
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
   z-index: 3;
 `;
 export const Card = styled.div`
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   background-color: #1e1e1e;
   border: 1px solid #1f1f1f;
   box-shadow: 2px 2px 8px #000;
@@ -295,20 +296,21 @@ export const CardImg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 110px;
-  width: 150px;
+  height: 85px;
+  width: 120px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5px;
   img {
-    height: 95px;
-    width: 100px;
+    height: 75px;
+    width: 80px;
   }
 `;
 
 export const CardTitle = styled.h3`
-  width: 150px;
-  padding-top: 5px;
+  width: 130px;
+  text-align: center;
+  padding-top: 5px 0px;
   color: #4285f4;
   font-size: 1.5rem;
   display: flex;
@@ -414,7 +416,7 @@ export const Contact = styled.article`
 export const formContact = styled.form`
   position: relative;
   background: #151519;
-  width: 35%;
+  width: 500px;
   border-radius: 30px;
   height: 500px;
   margin-left: auto;
@@ -469,7 +471,7 @@ export const Footer = styled.article`
   box-shadow: 0px 1px 5px #252525;
   padding: 10px 100px;
   ul {
-    width: 40%;
+    width: 700px;
     font-size: 1.9rem;
     display: flex;
     color: #ccc;
