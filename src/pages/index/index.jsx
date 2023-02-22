@@ -87,7 +87,7 @@ function Home() {
           />
           <>
             <S.buttonHome>
-              <a href="#contact">Contato</a>
+              <a href="#contact">Contato <Phone/></a>
             </S.buttonHome>
             <S.buttonHome>
               <a href={require("../../assets/CurriculoJoaoVitor.pdf")} download>
@@ -115,12 +115,6 @@ function AboutMe() {
         <S.containerAboutMe>
           <img
             src={imgProfile}
-            style={{
-              width: "300px",
-              height: "400px",
-              marginRight: "20px",
-              borderRadius:"15px"
-            }}
             alt="Profile"
           />
           <S.textAboutMe>
@@ -207,7 +201,8 @@ function MySkills() {
   return (
     <S.MySkills id="mySkills">
       <S.divMySkills>
-        <S.MySkillsTitle className="d-200">
+        <S.MySkillsTitle className="d-200"
+        >
           <S.Title>
             Habilidades
             <span>
@@ -258,31 +253,29 @@ function MyProjects() {
           </S.Title>
         </S.MyProjectsTitle>
         <S.CardProject>
-          <S.MyProjectImg>
-            <img src={netflixImg} alt='Netflix project'/>
-          </S.MyProjectImg>
+          <S.ProjectImg src={netflixImg} alt='Netflix project'/>
           <S.MyProjectTitle>Netflix Clone</S.MyProjectTitle>
           <S.descriptionProject>
             Projeto que visualmente espelha as paginas do Netflix, onde exibe
             listas de filmes e séries separados por gêneros, consumidos de uma
             API.
           </S.descriptionProject>
-          <button>
+          <S.ProjectButton>
             <a
               href="https://github.com/JoaoBibito/NetflixClone"
               target="_blank" rel="noreferrer"
             >
               Repositório
             </a>
-          </button>
-          <button>
+          </S.ProjectButton>
+          <S.ProjectButton>
             <a
               href="https://joaobibito.github.io/NetflixClone/"
               target="_blank" rel="noreferrer"
             >
               Ver página
             </a>
-          </button>
+          </S.ProjectButton>
         </S.CardProject>
       </S.divMyProjects>
     </S.MyProjects>
@@ -368,18 +361,9 @@ function Contact() {
 function Footer() {
   return (
     <S.Footer>
-      <div
-        style={{
-          fontSize: "1.5rem",
-          fontWeight: "bold",
-          justifySelf: "left",
-          position: "absolute",
-          left: "60px",
-          color:"white"
-        }}
-      >
+      <S.nameFooter>
         © João Vitor Barbosa 2022
-      </div>
+      </S.nameFooter>
       <ul>
         <li>
           <Link
