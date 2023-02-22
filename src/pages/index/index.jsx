@@ -263,7 +263,7 @@ function MyProjects() {
           <S.ProjectButton>
             <a
               href="https://github.com/JoaoBibito/NetflixClone"
-              target="_blank" rel="noreferrer"
+              target="_blank" rel="noopener noreferrer"
             >
               Repositório
             </a>
@@ -271,7 +271,7 @@ function MyProjects() {
           <S.ProjectButton>
             <a
               href="https://joaobibito.github.io/NetflixClone/"
-              target="_blank" rel="noreferrer"
+              target="_blank" rel="noopener noreferrer"
             >
               Ver página
             </a>
@@ -376,20 +376,20 @@ function Footer() {
           </Link>
         </li>
         <li>
-          <a href="https://github.com/JoaoBibito" target="_blank" rel="noreferrer">
+          <a href="https://github.com/JoaoBibito" target="_blank" rel="noopener noreferrer">
             Github <BsGithub size={25} style={{marginLeft: "8px"}} />
           </a>
         </li>
         <li>
           <a
             href="https://www.linkedin.com/in/joao-vitor-05aa38141/"
-            target="_blank" rel="noreferrer"
+            target="_blank" rel="noopener noreferrer"
           >
             Linkedin <BsLinkedin size={25} style={{marginLeft: "8px"}} />
           </a>
         </li>
         <li>
-          <a href="https://www.instagram.com/joao.bibito/" target="_blank" rel="noreferrer" >
+          <a href="https://www.instagram.com/joao.bibito/" target="_blank" rel="noopener noreferrer" >
             Instagram <BsInstagram size={25} style={{marginLeft: "8px"}} />
           </a>
         </li>
