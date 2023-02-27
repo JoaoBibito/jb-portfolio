@@ -10,7 +10,7 @@ export const Title = styled.h2`
   position: relative;
   font-size: 2.2rem;
   font-weight: 800;
-  margin: 2rem 0px;
+  margin: 1rem 0px;
   padding-top: 2.1rem;
   color: white;
   z-index: 1;
@@ -81,8 +81,8 @@ export const Name = styled.h1`
     margin-left: 50px;
   }
   @media(max-width:768px) {
-    font-size: 2rem;
-    margin-left: 50px;
+    font-size: 1.3rem;
+    margin-left: 0px;
   }
 `;
 
@@ -91,7 +91,6 @@ export const HeaderTopics = styled.ul`
   flex-direction: row;
   margin-left: auto;
   margin-right: 50px;
-
   ul {
     margin: 20px;
     font-size: 1.5rem;
@@ -113,10 +112,11 @@ export const HeaderTopics = styled.ul`
     }
   }
   @media(max-width:768px) {
-    
-    font-size: 1rem;
-    margin-right: 10px;
-  
+    margin-right: 1px;
+    ul{
+    font-size: .8rem;
+    margin-right: 6px;
+    }
   }
 `;
 //------------- HOME
@@ -177,7 +177,7 @@ export const TextHome = styled.div`
   }
   @media(max-width:1170px) {
     width: 550px;
-    margin-left: 20px;
+    margin-left: 50px;
     padding: 50px;
     font-size: 2rem;
 
@@ -260,8 +260,10 @@ export const buttonHome = styled.button`
   @media(max-width:768px){
     height: 40px;
     margin-top: 20px;
-    margin-right: 15px;
-    font-size: 1.6rem;
+    margin-right:10px;
+    font-size: 1.3rem;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 `;
 
@@ -298,6 +300,7 @@ export const containerAboutMe=styled.div`
     border-radius: 15px;
   }
   @media (max-width: 1170px) {
+    justify-content: space-around;
     width: 800px;
   }
   @media (max-width: 992px) {
@@ -320,6 +323,7 @@ export const containerAboutMe=styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 350px;
     img{
       margin-bottom: 20px;
       margin-right: 0px;
@@ -349,6 +353,7 @@ export const textAboutMe = styled.div`
   flex-direction: column;
  
   @media(max-width:1170px){
+    width: 400px;
     font-size: 25px;
   }
   @media (max-width:992px) {
@@ -391,6 +396,10 @@ export const divMySkills = styled.div`
     width: 750px;
     justify-content: space-around;
   }
+  @media(max-width: 510px){
+    height: 430px;
+    justify-content: space-around;
+  }
 `;
 
 export const MySkillsTitle = styled.h1`
@@ -402,26 +411,32 @@ export const MySkillsTitle = styled.h1`
   @media(max-width:768px){
     margin-bottom: 50px;
   }
+  @media(max-width:510px){
+    margin-bottom: 0px;
+  }
 `;
 
 export const divDescription = styled.div`
   height: 200px;
   width: 400px;
-  backdrop-filter: blur(2.5px);
+  //backdrop-filter: blur(2.5px);
   display: flex;
+  
   flex-direction: column;
   z-index: 5;
   @media (max-width: 1170px) {
     width: 300px;
   }
   @media (max-width: 768px) {
-    width: 200px;
+    width: 260px;
+    height: 100px;
   }
 `;
 
 export const descriptionTitle = styled.h2`
   width: 100%;
   color: #666;
+  backdrop-filter: blur(2.5px);
   font-size: 3.5rem; 
   @media(max-width:992px){
     font-size: 3rem;
@@ -429,12 +444,16 @@ export const descriptionTitle = styled.h2`
   @media (max-width: 768px) {
     font-size: 2rem;
   }
+  @media (max-width: 510px) {
+    font-size: 1.7rem;
+  }
 `;
 
 export const descriptionText = styled.div`
   width: 100%;
   font-size: 2.5rem;
   margin-top: 30px;
+  backdrop-filter: blur(2.5px);
   color: #666;
   @media(max-width:992px){
     font-size: 2.2rem;
@@ -453,6 +472,7 @@ export const divSkills = styled.div`
   padding: 0px 10px;
   z-index: 3;
   @media(max-width: 1170px){
+    height: 270px;
     width: 400px;
   }
   @media(max-width: 992px){
@@ -668,10 +688,14 @@ export const Contact = styled.article`
   width: 100%;
   height: 700px;
   display: flex;
-  padding: 80px 120px;
+  padding: 100px 120px;
   @media(max-width: 992px){
     height: 500px;
     padding: 80px 10px;
+  }
+  @media(max-width: 768px){
+    
+    padding: 45px 10px;
   }
 `;
 
@@ -716,6 +740,9 @@ export const divContact = styled.div`
   @media(max-width: 992px){
     margin-top: 0px;
   }
+  @media(max-width: 768px){
+    width: 290px;
+  }
 `;
 
 export const formInput = styled.input`
@@ -735,7 +762,7 @@ export const formInput = styled.input`
     font-size: 1.2rem;
   }
   @media(max-width: 768px){
-    width: 250px;
+    width: 240px;
   }
 `;
 export const Footer = styled.article`
@@ -775,7 +802,7 @@ export const Footer = styled.article`
   @media(max-width:992px){
     ul{
       width: 370px;
-      font-size: .7rem;
+      font-size: .8rem;
     }
   }
 `;
