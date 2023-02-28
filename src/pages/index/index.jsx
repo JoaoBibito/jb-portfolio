@@ -398,6 +398,10 @@ function Footer() {
   );
 }
 export function Index (){
+  useEffect(()=>{
+    document.title="<João DEV/>"
+    
+  },[])
   return (
     <div style={{
       width: "100%",
