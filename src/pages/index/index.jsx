@@ -372,12 +372,12 @@ function Footer() {
               hover: {Color: "blue"},
             }}
           >
-            Email <MdOutlineMail size={20} style={{marginLeft: "8px"}} />
+            <p>Email</p> <MdOutlineMail size={20} style={{marginLeft: "8px"}} />
           </Link>
         </li>
         <li>
           <a href="https://github.com/JoaoBibito" target="_blank" rel="noopener noreferrer">
-            Github <BsGithub size={20} style={{marginLeft: "8px"}} />
+            <p>Github</p> <BsGithub size={20} style={{marginLeft: "8px"}} />
           </a>
         </li>
         <li>
@@ -385,12 +385,12 @@ function Footer() {
             href="https://www.linkedin.com/in/joao-vitor-05aa38141/"
             target="_blank" rel="noopener noreferrer"
           >
-            Linkedin <BsLinkedin size={20} style={{marginLeft: "8px"}} />
+            <p>Linkedin</p> <BsLinkedin size={20} style={{marginLeft: "8px"}} />
           </a>
         </li>
         <li>
           <a href="https://www.instagram.com/joao.bibito/" target="_blank" rel="noopener noreferrer" >
-            Instagram <BsInstagram size={20} style={{marginLeft: "8px"}} />
+            <p>Instagram</p> <BsInstagram size={20} style={{marginLeft: "8px"}} />
           </a>
         </li>
       </ul>
