@@ -10,6 +10,7 @@ export default createGlobalStyle`
 }
     
  html{
+    min-width: 320px;
     scroll-behavior: smooth;
     font-size: 65%;
     @media(max-width:1675px) {

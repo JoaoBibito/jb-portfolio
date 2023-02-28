@@ -84,6 +84,10 @@ export const Name = styled.h1`
     font-size: 1.3rem;
     margin-left: 0px;
   }
+  @media(max-width:376px) {
+    font-size: 1rem;
+    margin-left: 0px;
+  }
 `;
 
 export const HeaderTopics = styled.ul`
@@ -117,6 +121,13 @@ export const HeaderTopics = styled.ul`
     font-size: .8rem;
     margin-right: 6px;
     }
+    @media(max-width:768px) {
+    margin-right: 1px;
+    ul{
+    font-size: .6rem;
+    margin-right: 3px;
+    }
+  }
   }
 `;
 //------------- HOME
@@ -569,7 +580,10 @@ export const CardTitle = styled.h3`
     font-size:1.1rem;
   }
   @media(max-width:768px){
-    font-size:1rem;
+    font-size:.4rem;
+  }
+  @media(max-width:376px){
+    font-size: .4rem;
   }
 `;
 
@@ -810,6 +824,8 @@ export const Footer = styled.article`
     }
   }
   @media(max-width:768px){
+    padding: 10px 0px;
+    justify-content: end;
     ul{
       width: 200px;
     }

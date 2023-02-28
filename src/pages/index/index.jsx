@@ -161,7 +161,7 @@ function MySkills() {
     {
       title: "CSS",
       description:
-        'CSS é uma linguagem de "folha de estilo" composta por "camadas" que serve para dar etilos a documentos web.',
+        'CSS é uma linguagem de "folha de estilo" composta por "camadas" que serve para dar etilo a documentos web.',
       image: css,
     },
     {
