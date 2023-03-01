@@ -580,10 +580,10 @@ export const CardTitle = styled.h3`
     font-size:1.1rem;
   }
   @media(max-width:768px){
-    font-size:.4rem;
+    font-size:.9rem;
   }
   @media(max-width:376px){
-    font-size: .4rem;
+    font-size: .8rem;
   }
 `;
 
