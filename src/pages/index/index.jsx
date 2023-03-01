@@ -154,20 +154,19 @@ function MySkills() {
   const skills = [
     {
       title: "HTML",
-      description:
-        "HTM é uma linguagem de marcação parar construir a estrutura de uma páginas web.",
+      description:"HTML é uma linguagem de marcação para construir a estrutura de uma página web.",
       image: htmlImg,
     },
     {
       title: "CSS",
       description:
-        'CSS é uma linguagem de "folha de estilo" composta por "camadas" que serve para dar etilo a documentos web.',
+        'CSS é uma linguagem de "folha de estilo" composta por "camadas" que serve para dar estilo a documentos web.',
       image: css,
     },
     {
       title: "ReactJS",
       description:
-        "ReactJS é uma biblioteca JavaScrit para a criação de interace de usuário(UI ou User Interface) para páginas web.",
+        "ReactJS é uma biblioteca JavaScript para a criação de interface de usuário(UI ou User Interface) para páginas web.",
       image: reactjsImg,
     },
     {
@@ -185,7 +184,7 @@ function MySkills() {
     {
       title: "Git",
       description:
-        "Sites responsivos são aqueles que se adaptam ao tamaho da tela que esta sendo exibida, como computador, celular, tablet e notebook, cada tela respondendo de forma diferente.",
+        "Sites responsivos são aqueles que se adaptam ao tamanho da tela que esta sendo exibida, como computador, celular, tablet e notebook, cada tela respondendo de forma diferente.",
       image: gitImg,
     },
   ];

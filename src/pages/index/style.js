@@ -847,6 +847,6 @@ color: white;
 }
 @media(max-width: 768px){
   font-size: .7rem;
-  left:10px
+  left:15px
 }
 `;
